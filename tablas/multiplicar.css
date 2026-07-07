@@ -1,0 +1,139 @@
+:root {
+  --tinta: #1c2b3a;
+  --tinta-suave: #48607a;
+  --papel: #f5f1e9;
+  --tarjeta: #ffffff;
+  --acento: #c17a3d;
+  --acento-oscuro: #9c5f2a;
+  --linea: #e4ddcd;
+  --sombra: 0 18px 40px -20px rgba(28, 43, 58, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--papel);
+  color: var(--tinta);
+  display: flex;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3rem) 1rem;
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.btn-probar {
+  align-self: flex-end;
+  background: var(--tinta);
+  color: var(--papel);
+  border: none;
+  padding: 0.7rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-probar:hover {
+  background: var(--acento-oscuro);
+}
+
+.btn-probar:active {
+  transform: scale(0.96);
+}
+
+.btn-probar:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+}
+
+.tabla-card {
+  width: 100%;
+  background: var(--tarjeta);
+  border-radius: 1.5rem;
+  box-shadow: var(--sombra);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.tabla-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.tabla-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 0.35rem;
+}
+
+.tabla-titulo {
+  margin: 0;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  color: var(--tinta);
+}
+
+.tabla-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tabla-fila {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--linea);
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
+}
+
+.tabla-fila:last-child {
+  border-bottom: none;
+}
+
+.operacion {
+  color: var(--tinta-suave);
+  text-align: left;
+}
+
+.igual {
+  text-align: center;
+  color: var(--linea);
+  font-weight: 700;
+}
+
+.resultado {
+  text-align: right;
+  font-weight: 700;
+  color: var(--acento-oscuro);
+}
+
+@media (max-width: 360px) {
+  .btn-probar {
+    align-self: center;
+  }
+
+  .tabla-fila {
+    font-size: 1rem;
+    padding: 0.6rem 0.5rem;
+  }
+}
