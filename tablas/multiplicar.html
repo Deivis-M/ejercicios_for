@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tabla del 3</title>
   <link rel="stylesheet" href="multiplicar.css" />
+  <script src="multiplicar.js"></script>
 </head>
 <body>
 
   <main class="page">
 
-    <button type="button" class="btn-probar">PROBAR</button>
+    <button type="button" class="btn-probar" onclick="generarTablas()">PROBAR</button>
 
     <section class="tabla-card">
 
@@ -19,17 +20,7 @@
         <h1 class="tabla-titulo">Tabla del 3</h1>
       </header>
 
-      <ul class="tabla-lista">
-        <li class="tabla-fila"><span class="operacion">3 × 1</span><span class="resultado">3</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 2</span><span class="resultado">6</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 3</span><span class="resultado">9</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 4</span><span class="resultado">12</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 5</span><span class="resultado">15</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 6</span><span class="resultado">18</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 7</span><span class="resultado">21</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 8</span><span class="resultado">24</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 9</span><span class="resultado">27</span></li>
-        <li class="tabla-fila"><span class="operacion">3 × 10</span><span class="resultado">30</span></li>
+      <ul class="tabla-lista" id="tablasMultiplicar">
       </ul>
 
     </section>
