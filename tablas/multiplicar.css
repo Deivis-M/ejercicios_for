@@ -27,11 +27,11 @@ body {
 
 .page {
   width: 100%;
-  max-width: 380px;
+  max-width: 398px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.05rem;
   animation: aparecer 0.5s ease both;
 }
 
@@ -55,6 +55,18 @@ body {
   }
 }
 
+/* Animación de aparición para cada fila cuando el script las genera */
+@keyframes filaAparece {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .btn-probar {
   align-self: center;
   background: var(--azul);
@@ -67,7 +79,7 @@ body {
   border-radius: 0.6rem;
   cursor: pointer;
   animation: pulso 2.4s ease-in-out infinite;
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-probar:hover {
@@ -91,6 +103,7 @@ body {
   border-radius: 1rem;
   box-shadow: var(--sombra);
   padding: clamp(1.4rem, 5vw, 1.9rem);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .tabla-header {
@@ -117,12 +130,17 @@ body {
   color: var(--tinta);
 }
 
+.tabla-icono {
+  font-size: 0.85em;
+  margin-right: 0.15em;
+}
+
 .tabla-lista {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.35rem;
+  gap: 0.03rem;
 }
 
 .tabla-fila {
@@ -132,7 +150,8 @@ body {
   padding: 0.65rem 0.9rem;
   border-radius: 0.5rem;
   font-size: 1rem;
-  transition: background 0.15s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  animation: filaAparece 0.35s ease both;
 }
 
 .tabla-fila:nth-child(odd) {
@@ -149,8 +168,10 @@ body {
 }
 
 .resultado {
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.08em;
   color: var(--azul-oscuro);
+  padding-right: 4px;
 }
 
 .page-footer {
@@ -166,7 +187,7 @@ body {
 
 @media (min-width: 480px) {
   .page {
-    max-width: 400px;
+    max-width: 418px;
   }
 }
 
@@ -179,6 +200,37 @@ body {
   .btn-probar {
     padding: 0.6rem 2rem;
   }
+}
+
+.instrucciones {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--tinta-suave);
+}
+
+.instrucciones strong {
+    color: var(--azul-oscuro);
+}
+
+.txt-ayuda {
+    font-size: 0.78rem;
+    color: var(--tinta-suave);
+}
+
+.tabla-vacia {
+    list-style: none;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+    color: var(--tinta-suave);
+    background: transparent !important;
+}
+
+.tabla-vacia strong {
+    color: var(--azul-oscuro);
 }
 
 .grupo-input {
@@ -201,10 +253,10 @@ body {
     border-radius: 0.6rem;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .txt-numero:focus {
     border-color: var(--azul);
-    box-shadow: 0 0 0 3px var(--azul-claro);
+    box-shadow: 0 0 0 4px var(--azul-claro);
 }

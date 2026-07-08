@@ -12,9 +12,26 @@
 <body>
 
   <main class="page">
+
+    <p class="instrucciones">
+      Escribe un número, presiona <strong>PROBAR</strong> y aquí abajo aparecerá su tabla de multiplicar.
+    </p>
+
     <div class="grupo-input">
       <label for="txtNumero" class="lbl-input">Número de la tabla</label>
-      <input type="text" id="txtNumero" class="txt-numero" placeholder="Ej. 5">
+      <input
+        type="text"
+        id="txtNumero"
+        class="txt-numero"
+        placeholder="Ej. 5"
+        inputmode="numeric"
+        autocomplete="off"
+        aria-describedby="ayudaNumero"
+        autofocus
+        onclick="this.select()"
+        onkeydown="if(event.key==='Enter'){generarTablas();}"
+      >
+      <small id="ayudaNumero" class="txt-ayuda">Ingresa cualquier número entero, por ejemplo 5 o 12. Tip: también puedes presionar Enter.</small>
     </div>
 
     <button type="button" class="btn-probar" onclick="generarTablas()">PROBAR</button>
@@ -23,10 +40,11 @@
 
       <header class="tabla-header">
         <span class="tabla-eyebrow">Multiplicación</span>
-        <h1 class="tabla-titulo">Tabla del 3</h1>
+        <h1 class="tabla-titulo"><span class="tabla-icono" aria-hidden="true">🧮</span> Tabla de multiplicar</h1>
       </header>
 
-      <ul class="tabla-lista" id="tablasMultiplicar">
+      <ul class="tabla-lista" id="tablasMultiplicar" aria-live="polite">
+        <li class="tabla-vacia">Escribe un número arriba y presiona <strong>PROBAR</strong> para generar su tabla de multiplicar.</li>
       </ul>
 
     </section>
