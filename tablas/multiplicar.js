@@ -1,7 +1,7 @@
 function generarTablas() {
+    let Usuario = document.getElementById("txtNumero");
     let contenedor = document.getElementById("tablasMultiplicar");
-    contenedor.innerHTML = "<h1>PROBANDO</h1>";
-    let numero = 8;
+    let numero = Usuario.value;
     let contenido = "";
     for (let i = 0; i <= 12; i++) {
         let total = i * numero;
