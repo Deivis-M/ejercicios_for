@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +8,14 @@
   <link rel="stylesheet" href="multiplicar.css" />
   <script src="multiplicar.js"></script>
 </head>
+
 <body>
 
   <main class="page">
+    <div class="grupo-input">
+      <label for="txtNumero" class="lbl-input">Número de la tabla</label>
+      <input type="text" id="txtNumero" class="txt-numero" placeholder="Ej. 5">
+    </div>
 
     <button type="button" class="btn-probar" onclick="generarTablas()">PROBAR</button>
 
@@ -30,4 +36,5 @@
   </main>
 
 </body>
+
 </html>
